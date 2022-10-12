@@ -1,0 +1,19 @@
+﻿syntax = "proto3";
+
+import "google/protobuf/wrappers.proto";
+
+service UserGRPC {
+  rpc GetUserInfo (UserRequest) returns (UserData);
+}
+
+message UserRequest {
+  string userId = 1;
+}
+
+message UserData {
+	google.protobuf.StringValue fullName = 1;
+	google.protobuf.StringValue avatar = 2;
+	google.protobuf.StringValue email = 3;
+	google.protobuf.StringValue phoneNumber = 4;
+	
+}
